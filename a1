@@ -1,0 +1,19 @@
+2018年8月17日
+11:56
+
+XMLHttpRequest 对象
+variable=new XMLHttpRequest();
+
+如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：
+xmlhttp.open("GET","ajax_info.txt",true);
+xmlhttp.send();
+
+GET 还是 POST？
+与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。
+然而，在以下情况中，请使用 POST 请求：
+无法使用缓存文件（更新服务器上的文件或数据库）
+向服务器发送大量数据（POST 没有数据量限制）
+发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
+
+
+AJAX应用程序可以使用XML传输数据，但同样常见的数据传输为纯文本或JSON文本。
