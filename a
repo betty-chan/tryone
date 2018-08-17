@@ -1,0 +1,4 @@
+工作流程：工作区—add—暂存区—commit—版本区
+分支管理：branch创建分支、切换分支checkout、合并分支merge 
+
+远程仓库：本地仓库到远程仓库push，远程仓库到本地仓库pull
