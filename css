@@ -1,0 +1,52 @@
+盒子模型
+Margin：
+Div居中：margin:0 auto
+上下左右
+左右可auto
+*Margin auto未居中因为没有设置宽度
+布局
+1.定位机制
+        • Position
+        static（默认）：元素框分为行元素和块元素。块元素默认占据全部可用宽度的元素，并且在其前后都会换行，常见有div\h\p。行元素在一行中水平布置可以使用水平内边距、边框和外边距调整它们的间距。但是，垂直内边距、边框和外边距不影响行内框的高度，行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。
+        relative：元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。
+        Absolute：元素框从文档流完全删除，相对于其包含块定位。元素原先在正常文档流中所占的空间会关闭，元素定位后生成一个块级框。
+        fixed：元素框从文档流完全删除，并相对视窗中定位。
+        • Float：在包含块中生成浮动框。不要轻易用float，除非图文混排或者右浮动：脱离文档流，是需要设高度的
+        • Clear:指定元素两侧不能出现浮动元素
+        • z-index
+2.display
+使用 display 属性改变生成的框的类型。
+1.table布局：table-row、table-column
+2.普通：block、inline、inline-block、none
+3.弹性盒子：flex
+4.网格
+
+*CSS 有三种基本的定位机制：文档流、浮动和绝对定位/固定。
+超出显示
+1.隐藏
+overflow:hidden; 
+text-overflow:ellipsis
+2.行数
+-webkit-box;//对象作为弹性伸缩盒子模型显示 
+-webkit-box-orient: vertical;//设置或检索伸缩盒对象的子元素的排列方式 
+-webkit-line-clamp: 2;//溢出省略的界限
+3.换行
+自动换行
+white-space:nowrap;
+强制换行——词内断句：
+word-wrap：允许词内断句
+word-break：词内断句方式
+word-wrap: normal|break-word; 
+word-wrap 属性用来标明是否允许浏览器在单词内进行断句，这是为了防止当一个字符串太长而找不到它的自然断句点时产生溢出现象。 
+normal: 只在允许的断字点换行(浏览器保持默认处理) 
+break-word:在长单词或URL地址内部进行换行 
+word-break: normal|break-all|keep-all;
+其他
+表单组件
+1.表格
+2.分页
+3.下拉框-搜索-复选
+4.富文本
+5.上传
+滚动条
+scrollTop
