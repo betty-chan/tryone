@@ -1,19 +1,197 @@
-2018年8月17日
-11:56
-
-XMLHttpRequest 对象
-variable=new XMLHttpRequest();
-
-如需将请求发送到服务器，我们使用 XMLHttpRequest 对象的 open() 和 send() 方法：
-xmlhttp.open("GET","ajax_info.txt",true);
-xmlhttp.send();
-
-GET 还是 POST？
-与 POST 相比，GET 更简单也更快，并且在大部分情况下都能用。
-然而，在以下情况中，请使用 POST 请求：
-无法使用缓存文件（更新服务器上的文件或数据库）
-向服务器发送大量数据（POST 没有数据量限制）
-发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
-
-
-AJAX应用程序可以使用XML传输数据，但同样常见的数据传输为纯文本或JSON文本。
+JavaScript
+	基础
+		数据类型
+			基本
+				数值
+				布尔
+				字符串
+				null
+				undefined
+			对象
+				数组
+				Date
+					时区
+						UTC
+						LT
+					时间格式
+						时间戳
+						时间串
+				Reg
+					语法
+						元字符
+						量词
+						修饰符
+							g、i、m
+					使用
+						test()
+						exec()
+						replace()
+						split
+						search	检索与正则表达式相匹配的值
+						match	找到一个或多个正则表达式的匹配
+				JSON
+				Math
+		DOM
+			节点
+				选择器
+				Dom对象
+					属性
+						clientWidth/Height/Left/Top
+						offsetWidth/Height/Left/Top
+						scrollWidth/Height/Left/Top
+			事件
+				鼠标事件
+				触摸事件
+				其他事件
+			操作
+				文档操作
+					style
+				css操作
+					css
+					width()
+					height()
+					position()
+					offset()
+					offsetParent()
+					scrollTop()
+					scrollLeft()
+		BOM
+			window
+				窗口
+					close
+					open
+					resizeTo
+					moveTo
+					reload
+					onbeforeunload 
+					unload
+				弹窗
+					alert
+					confirm
+					prompt
+				history
+					forward
+					back
+			clipboardData
+			document
+			存储
+				localStorage/sessionStorage
+					setItem
+					getItem
+					removeItem
+				cookie
+			navigator.geolocation.getCurrentPosition
+	应用
+		拖拽
+	拓展
+		IE兼容
+		字符集
+		性能优化
+	版本
+		ES6
+			let
+			contact
+			函数
+				箭头函数
+				函数默认值
+			for of
+			for in
+			Promises
+基础
+	数据类型
+		基本
+			数值
+			布尔
+			字符串
+			null
+			undefined
+		对象
+			数组
+			Date
+				时区
+					UTC
+					LT
+				时间格式
+					时间戳
+					时间串
+			Reg
+				语法
+					元字符
+					量词
+					修饰符
+						g、i、m
+				使用
+					test()
+					exec()
+					replace()
+					split
+					search	检索与正则表达式相匹配的值
+					match	找到一个或多个正则表达式的匹配
+			JSON
+			Math
+	DOM
+		节点
+			选择器
+			Dom对象
+				属性
+					clientWidth/Height/Left/Top
+					offsetWidth/Height/Left/Top
+					scrollWidth/Height/Left/Top
+		事件
+			鼠标事件
+			触摸事件
+			其他事件
+		操作
+			文档操作
+				style
+			css操作
+				css
+				width()
+				height()
+				position()
+				offset()
+				offsetParent()
+				scrollTop()
+				scrollLeft()
+	BOM
+		window
+			窗口
+				close
+				open
+				resizeTo
+				moveTo
+				reload
+				onbeforeunload 
+				unload
+			弹窗
+				alert
+				confirm
+				prompt
+			history
+				forward
+				back
+		clipboardData
+		document
+		存储
+			localStorage/sessionStorage
+				setItem
+				getItem
+				removeItem
+			cookie
+		navigator.geolocation.getCurrentPosition
+应用
+	拖拽
+拓展
+	IE兼容
+	字符集
+	性能优化
+版本
+	ES6
+		let
+		contact
+		函数
+			箭头函数
+			函数默认值
+		for of
+		for in
+		Promises
