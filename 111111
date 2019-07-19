@@ -1,15 +1,64 @@
-弱数据类型
-数字、字符串、布尔、未定义、NULL、数组、对象、方法、字符
+选择器
 
-数组
-1.push
-2.splice() 方法用于插入、删除或替换数组的元素。注意：这种方法会改变原始数组！
+节点遍历
+1.向上：parent()、parents()、parentsUntil()
+2.向下：children()、find()
+3.同胞：siblings()、next()、nextAll()、nextUntil()、prev()、prevAll()、prevUntil()
+4.过滤：first()、last()、eq()、filter()、not()
 
-字符创
-1.split()分割
+事件
+常见:
+鼠标事件	键盘事件	表单事件	文档/窗口事件
+click	keypress	submit	load
+dblclick	keydown	change	resize
+mouseenter	keyup	focus	scroll
+mouseleave	 	blur	unload
+hover			ready
+文档就绪事件
+$(function(){ 
+});
+绑定事件
+Bind()
 
-窗口
-1.window.open(url,_blank)
+操作
+1.设置或返回内容 ：text()、html()、val()、attr()
+2.添加元素：
+append() - 在被选元素的结尾插入内容
+prepend() - 在被选元素的开头插入内容
+after() - 在被选元素之后插入内容
+before() - 在被选元素之前插入内容
+3.删除元素
+remove() - 删除被选元素（及其子元素）
+empty() - 从被选元素中删除子元素
+4.CSS类
+css()
+addClass() - 向被选元素添加一个或多个类
+removeClass() - 从被选元素删除一个或多个类
+toggleClass() - 对被选元素进行添加/删除类的切换操作
+5.尺寸
+width()
+height()
+innerWidth()
+innerHeight()
+outerWidth()
+outerHeight()
+6.效果
+hide/show/toggle()
+fadeIn()/fadeOut()/fadeToggle()/fadeTo()
+slideDown()/slideUp()/slideToggle()
+animate()/stop()
 
-数组和字符串间转换。
-1.join
+其他
+1.Ajax
+例如
+$.ajax({
+	type: "post",  
+	url: "admin/PfmOptionRuleItem.do",
+	success: function(data){
+		$("#ruleItem").val(data.ruleItem);  //①
+	}
+});
+2.ajaxFileUpload
+3.noConflict()
+
+插件
