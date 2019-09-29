@@ -1,64 +1,107 @@
-选择器
+标签
+meta
+1.name
+2.content：搜索引擎抓取
+3.keywords：网页关键字
+4.charset
 
-节点遍历
-1.向上：parent()、parents()、parentsUntil()
-2.向下：children()、find()
-3.同胞：siblings()、next()、nextAll()、nextUntil()、prev()、prevAll()、prevUntil()
-4.过滤：first()、last()、eq()、filter()、not()
+a
+锚点< a href="" name="" id=""></a>
 
-事件
-常见:
-鼠标事件	键盘事件	表单事件	文档/窗口事件
-click	keypress	submit	load
-dblclick	keydown	change	resize
-mouseenter	keyup	focus	scroll
-mouseleave	 	blur	unload
-hover			ready
-文档就绪事件
-$(function(){ 
-});
-绑定事件
-Bind()
+Input
+1.Type：button、check、
+radio(靠name分组) value
+2.disable/readonly：只读
+3.maxlength：字符长度限制
+4.autocomplete="off"：不显示输入的历史记录
+autocomplete 属性有可能在 form元素中是开启的，而在input元素中是关闭的
 
-操作
-1.设置或返回内容 ：text()、html()、val()、attr()
-2.添加元素：
-append() - 在被选元素的结尾插入内容
-prepend() - 在被选元素的开头插入内容
-after() - 在被选元素之后插入内容
-before() - 在被选元素之前插入内容
-3.删除元素
-remove() - 删除被选元素（及其子元素）
-empty() - 从被选元素中删除子元素
-4.CSS类
-css()
-addClass() - 向被选元素添加一个或多个类
-removeClass() - 从被选元素删除一个或多个类
-toggleClass() - 对被选元素进行添加/删除类的切换操作
-5.尺寸
-width()
-height()
-innerWidth()
-innerHeight()
-outerWidth()
-outerHeight()
-6.效果
-hide/show/toggle()
-fadeIn()/fadeOut()/fadeToggle()/fadeTo()
-slideDown()/slideUp()/slideToggle()
-animate()/stop()
+Select：option: value
 
-其他
-1.Ajax
-例如
-$.ajax({
-	type: "post",  
-	url: "admin/PfmOptionRuleItem.do",
-	success: function(data){
-		$("#ruleItem").val(data.ruleItem);  //①
-	}
-});
-2.ajaxFileUpload
-3.noConflict()
+Textarea
+1.大小固定：resize:none
+2.maxlength：字符长度限制
 
-插件
+Button 
+按钮默认提交，type="button"可以解决
+
+Table
+使用：<table><tr><td></td></tr></table>
+属性：border：给表格及单元格加边框，属性值可以是1、2、3......
+width: 设置整个表格的宽
+height：设置整个表格的高
+border-spacing:0;控制单元格之间的空白为0
+border-collapse:collapse; 设置各单元格边宽以及外边宽重叠；
+cellpadding：设置内容与边框的距离
+合并单元格的问题：colspan 跨行合并、rowspan 跨列合并
+
+iframe
+属性
+tabindex：是否聚焦
+画布
+1.找到canvas
+2.创建图形对象getContext
+3.绘制图像
+moveTo(0, 0);
+lineTo
+fillStyle
+fillRect
+arc(95, 50, 40, 0, 2 * Math.PI)
+fillText
+strokeText
+drawImage
+
+多媒体
+<video> 标签
+属性
+值
+描述
+autoplay
+autoplay
+如果出现该属性，则视频在就绪后马上播放。
+controls
+controls
+如果出现该属性，则向用户显示控件，比如播放按钮。
+height
+pixels
+设置视频播放器的高度。
+loop
+loop
+如果出现该属性，则当媒介文件完成播放后再次开始播放。
+preload
+preload
+如果出现该属性，则视频在页面加载时进行加载，并预备播放。
+如果使用 "autoplay"，则忽略该属性。
+src
+url
+要播放的视频的 URL。
+width
+pixels
+设置视频播放器的宽度。
+<audio> 标签的属性
+属性
+值
+描述
+autoplay
+autoplay
+如果出现该属性，则音频在就绪后马上播放。
+controls
+controls
+如果出现该属性，则向用户显示控件，比如播放按钮。
+loop
+loop
+如果出现该属性，则每当音频结束时重新开始播放。
+preload
+preload
+如果出现该属性，则音频在页面加载时进行加载，并预备播放。
+如果使用 "autoplay"，则忽略该属性。
+src
+url
+要播放的音频的 URL。
+
+HTML5声明：<!DOCTYPE html>
+<meta charset="utf-8">
+datalist：自动完成下拉列表
+
+ 邮件HTML
+1.使用table布局
