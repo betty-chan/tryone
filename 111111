@@ -1,244 +1,157 @@
-数据类型
-1.原始：数字、布尔、字符串、Symbol、undefined、null
-2.引用：Object、数组、Date、RegExp、Math、JSON、Function
-*弱数据类型的，typeof查看
-!a：可以判断a为null\undefined\空字符串\false\数字0
-但小心下面的, 可都返回 true:'字符串'0'、[] 空数组、{} 空对象
+MVC应用
+（1）Module&controller：创建模块应用&用于定义应用
+var app = angular.module('myApp', []);
+（2）ng-app&ng-controller：指明应用&指明控制器
+{{}}：模型表达式
+{{::}}:one-time
+scope：用于传递应用的域模型对象，可以为scope创建读取方法
+rootscope ：根作用域，可以在各个 controller 中使用。
+$scope.$watch(watchExpression, [listener], [objectEquality])：
+监听参数，监听函数(new,old)，相等比较的方式。
+多个参数“+”分割。
+第三个参数，它在默认情况下是false。 
+当第三个参数是false时，其实watch函数监视的是数组的地址，而数组的内容的变化不会影响数组地址的变化，所以watch函数监视的是数组的地址，而数组的内容的变化不会影响数组地址的变化，所以watch函数失灵了。
+取消监听var XXX=$watch; XXX();
+AngularJS 动画：需要引入 angular-animate.min.js 库，还需在应用中使用模型 ngAnimate。
 
-数字
-parseInt()：转换成整数
-isNaN()：是否非数字
-isFinite() ：是否是有穷数，Infinity/-Infinity
+Angular对象
+angular.isObject
+angular.equals(A,B)：比较的两个对象或值是相同类型的，而且它们所有的属性都是相等的。
+angular.copy()：
+angular.extend()：方法可以把一个或多个对象中的方法和属性传到一个目的对象中，使得这个对象拥有其他对象相同的方法和属性，如果想要保存一个对象的状态，除了可以调用angular.copy()方法外，还可以把一个空对象｛｝作为第一个对象传入
+angular.merge()：把数据传入A对象，和extend的区别就是merge是深拷贝
+angular.fromJson()/toJson()
+angular.element(dom元素对象) : 将dom对象/html标签包装为jQuery对象，供$compile使用
 
-字符串
-1.split()分割
-2.join：数组和字符串间转换。
-遍历数组和对象
-3.indexof：是否含有某字符串，ndexOf方法返回一个整数值,stringObject中的字符位置是从0开始的。如果没有找到子字符串，则返回 -1
-4.正则表达式
-5.substr
-6.replace(regexp/substr,replacement)
-7.trim()去除首位两端空格
-8.parseInt()：返回整数
-localeCompare:排序
 
-数组
-1.操作
-indexof：是否含有某值
-push
-splice(开始位置，数量) ：方法用于插入、删除或替换数组的元素。注意：这种方法会改变原始数组！位置-1倒数1
-slice：剪切
-reverse() 方法用于颠倒数组中元素的顺序
-unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。
-Array.isArray()：判断是否是数组
-数组判空：Array.length
-数组去重
-判等，复制
-toString
-forEach(item)
-_.forEach(arr, item)
-map(function)
-filter(function):filter的callback函数需要返回布尔值true或false
-Some(function)
-Every(function)
-for i in arry:i作为key
-不要在 Array 上使用 for-in 循环
-for-in 循环只用于 object/map/hash 的遍历, 对 Array 用 for-in 循环有时会出错. 因为它并不是从 0 到 length - 1 进行遍历, 而是所有出现在对象及其原型链的键值。
+过滤器filter
+1.过滤器可以使用一个管道字符（|）添加到表达式和指令中，用于转换数据
+2.
+过滤器	描述
+currency	格式化数字为货币格式。
+filter输入过滤	从数组项中选择一个子集。Filter:模型
+lowercase	格式化字符串为小写。
+orderBy	根据某个表达式排列数组。orderBy：''
+uppercase	格式化字符串为大写。
+3.自定义
 
-函数=》对象
-1.函数定义方式：一般定义，表达式定义/箭头函数（函数不会被提升）
-2.函数自动调用：定以后使用()执行
-3.JavaScript函数有一个名为arguments对象的内置对象，arguments.length
-箭头功能没有自己的功能this。它们不适合定义对象方法。
-参数通过值传递
-函数调用中的参数是函数的参数。
+指令
+	• ng-disabled 指令直接绑定应用程序数据到 HTML 的 disabled 属性。
+	• ng-include：
+	• ng-init：初始化值
+	• ng-repeat：对集合和数组中重复，相当于foreach.
+	如果ng-repeat绑定的数组中元素有重复，会报错，可使用track by $index（索引）或者item.id（自己的id号）$parent
+	repeat-finish
+	• ng-repeat-start和ng-repeat-end
+	• ng-option：v.value as v.name for v in data
+	支持orderBy过滤器
+	group by
+	disable when color.disabled
+	• ng-if:引起作用域问题parent、ng-if和ng-click使用导致失效
+	• ng-show/ng-hide：导致校验
+	• ng-style
+	• ng-class ：
+	• ng-bind：把变量绑定在内嵌内容innerHtml中
+	• ng-bind-html
+	• ng-model：可以将输入域的值与 AngularJS 创建的变量绑定
+	• ng-model-options：规定绑定数据的选项，防抖处理
+	• ng-switch&ng-switch-when&ng-switch-default：相当于ng-if
+自定义指令
+1.angular.module('baymaxEvent').directive(“directiveName”,  directiveFactory)指令名小驼峰，使用名横杆
+2.属性
+	• restrict：调用指令通过元素名E、属性A、类名C、注释M（须设置replace属性为true）。默认值为 EA。
+	• templateUrl/template：对应HTML
+	• scope：设置当前指令的作用域。
+	1）false(默认值)：使用父作用域 ；
+	2）true：创建新作用域，新作用域继承了父作用域；
+	3）{}：创建新作用域，新作用域不继承父作用域。=[?]（双向绑定）和@（字符串）和&（方法）。
+	指令作用域包含两个部分：指令模板的作用域、指令所在DOM的作用域。
+	*多个组件在一个dom中做作用域问题
+	• replace：是否使用模板替换原有元素。
+	1）false（默认）：模板会被当作子元素插入到调用此指令的元素内部
+	2）true：将会用模板替换指令所在的DOM；
+	• priority：提示编译器执行的顺序优先级，number（默认为0）
+	• link：负责操作DOM元素，是定义指令和作用域连接函数：参数为scope、element、attr、controller
+	• compile：用来在link函数运行之前进行一些DOM转化，参数：tElement – 指令绑定的元素、attrs。什么时候使用compile?大多数时候，你仅仅只需要编写link函数。这是因为大部分指令都只关心与注册事件监听器，监视器，更新DOM等等，它们在link函数中即可完成。像是ng-repeat这样的指令，需要多次克隆并重复DOM元素，就需要在link函数运行之前使用compile函数。
+	• controller：定义与其他指令进行交互的接口函数，指令控制器函数。参数有$scope,$element, $attrs, $transclude
+	• require：需要其他指令的控制器require字段，可为自定义指令或内置指令如ng-model等。设置查找控制器时的行为：
+	1）无（默认）：如果在当前指令中没有找到所需要的控制器会报错，传给link函数的第四个参数。
+	2）?：如果在当前指令中没有找到所需要的控制器，会将null作为传给link函数的第四个参数。
+	3）^：先在当先指令寻找，再向上游的指令链中查找require参数所指定的控制器，传给link函数的第四个参数。
+	4）^^:先向上游寻找
+	5）?^：可选择地加载需要的指令并在父指令链中进行查找。
+	• transclude/嵌入：
+	1）false（默认）
+	2）true：是否嵌入
+	3）object：被嵌入内容，需要和ngTransclude指令一起使用，ng-transclude指令所在元素的内容会被指令内容替代，并且此时指令内容受指令外部的作用域控制。？修饰模板可不存在。
+	• terminal：Boolean,//（布尔型），true或false,如果为false,则这个参数用来告诉AngularJS停止运行当前元素上比本指令优先级低的指令。优先级相同的指令还是会被执行。
+自定义组件Component
+	1. 属性
+	• templateUrl/template
+	• bindings：相当于scope：<、&
+	• require
+	• transclude
+	• controller
 
-JavaScript参数按值传递：函数只能知道值，而不是参数的位置。
+Angular服务
+1.服务是一个函数或对象，可在你的 AngularJS 应用中使用。
+$location：返回当前页面的 URL 地址，$location.search()修改参数
+$http：服务向服务器发送请求，应用响应服务器传送过来的数据 方法：Method(get/post)参数：url其他}ajax：url、其他、method
+$httpProvider：
+$timeout：var a =$timeout(function(){})
+$interval：var a = $interval(function(){}，间隔时间，次数).then()   clearInterval(a)
+$rootScope：根作用域：用 rootscope 定义的值，可以在各个 controller 中使用。
+$emit只能向parent controller传递event与data
+$broadcast只能向child controller传递event与data
+$on用于接收event与data
+$compile：手动编译
+$q 异步同步处理
+（1）$q.deffer()使用：deferred.notify、Deffer.resolve&deffer.reject、Deffer.promise、Promise.then/catch/finally  
+（2）$q.all使用：
+$q.when一个 Promise 就是一个代表了异步操作最终完成或者失败的对象
 
-如果函数更改参数的值，则不会更改参数的原始值。
+Angular路由
+uiRouter
+是基于state的，可嵌套的。
+	1. $urlRouterProvider 服务提供者，用来配置路由重定向
+	2. $stateProvider 服务提供者，用来配置路由:
+	$stateProvider.state(''-指定父子关系,{url（/:name）,templateUrl,controller,params,onEnter,onExit})
+	3. $state服务：用来显示当前路由状态信息
+	方法：go(id,params)、reload()、get()
+	属性：current、params
+	事件：$stateChangeError、 $stateChangeStart、$stateChangeSuccess、 $stateNotFound
+	4. ui-view指令：路由模板渲染，对应的 dom 相关联
+	5. ui-sref指令：点击跳转,ui-sref不支持动态绑定
+	1.ui-sref="#state-id({name1: value1, name2: value2})"
+	2.route设置state添加params: {time: ':time', name: ':name'},
+	3.controller接收：注入$stateParams，$scope.name1 = $stateParams.name1;
+ngRoute
+	1. $routeProvider服务提供者：
+	2. $route服务
+	3. ng-view、ng-href指令
+module.config(['$routeProvider', function($routeProvider){    
+	$routeProvider
+	.when(url,{
+        template:string, //在ng-view中插入简单的html内容
+        templateUrl:string, //在ng-view中插入html模版文件
+        controller:string,function / array, //在当前模版上执行的controller函数
+        controllerAs:string, //为controller指定别名
+       redirectTo:string,function, //重定向的地址
+       resolve:object<key,function> //指定当前controller所依赖的其他模块
+     });
+	 .otherwise({redirectTo:'/'});
+}]);
 
-参数的更改在函数外部不可见（反映）。
-
-对象通过引用传递
-在JavaScript中，对象引用是值。
-this在函数中使用时，值是“拥有”函数的对象
-
-对象
-1.操作
-Delete object[item]
-add：使用框架方法
-判空
-判断是否对象
-判断是否有某属性item in object
-Copy，判等
-JSON.stringify(result) != "{}"
-Object.keys(obj).length==0判断值是否为空
-2.遍历
-for in
-Object.keys(obj).forEach(function(key){});
-
-常用
-Date
-1.组成
-时区：UTC时间和LT、getTimezoneOffset()
-时间格式：YYYY-MM-DD、number/unix(utc)、ISO（z为utc，±）
-2.方法
-Date.parse()：返回时间戳
-REG
-test()方法搜索字符串指定的值，根据结果并返回真或假。
-exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
-JSON
-JSON.parse() 方法用于将一个 JSON 字符串转换为对象。
-JSON.stringify()	用于将 JavaScript 值转换为 JSON 字符串。
-Math
-Math.random()：0-1之间的随机数
-Math.round()：四舍五入
-Math.ceil()：向上取整
-Math.floor()：向下取整
-ES6
-1.let和const
-2.结构赋值
-3.箭头函数
-4.扩展运算符
-
-闭包：是可以访问外部局部变量的特殊函数
-对象：Object.assign,Object.keys()
-数组：for...in循环出的是key，for...of循环出的是value（新）
-
-严格模式
-"use strict"
-
-this指向
-1.默认undefined
-2.指向被调用的上一级对象
-3.this碰到return，返回对象时this指向返回对象
-4.改变this指向，call（多参数并执行）、apply（数组参数并执行）、bind（返回方法）
-
-对象
-1.原型/类：prototype/class（constructor、方法、属性）
-2.创建实例：new XXX()
-3.继承/原型链：extends和__proto__
-
-运行机制
-事件循环
-主任务/回调任务
-执行阶段：语法分析、预编译阶段、执行阶段
-DOM
-节点
-clientWidth：是可视区的宽度
-offsetWidth：是元素的实际宽度
-scrollWidth：是实际内容的宽度
-.parent()：父元素
-find()	返回被选元素的后代元素
-children()返回被选元素的子元素
-事件
-Show/hide,
-On/off
-addEventListener()
-one
-1.event
-preventDefault阻止默认事件
-$event.stopPropagation()：阻止冒泡事件
-compositionEvent
-MouseEvent 接口指用户与指针设备( 如鼠标 )交互时发生的事件。使用此接口的常见事件包括：
-click，dblclick
-mouseup，mousedown,
-mouseenter，mouseleave，mousemove，mouseover，mouseout
-MouseEvent对象
-1.鼠标 / 键盘属性：
-（1）clientX/Y：返回当事件被触发时，鼠标指针的浏览器视口左上角为基点的垂直坐标。
-（2）pageX/Y：返回当事件被触发时，鼠标指针的以整个渲染页面的左上角为基点的垂直坐标。
-（3）screenX/Y：返回当事件被触发时，鼠标指针的以整个屏幕的左边缘为基点的垂直坐标。
-2.offset()偏移量
-offset意为偏移量，是被点击的元素距左上角为参考原点的长度
-scrollTo
-scrollTop
-scrollLeft
-onload 和 onunload 事件
-
-拖拽原理
-1.mousedown：起始位置
-2.$document：
-（1）mousemove：当前位置clientXY-起始位置clientXY
-（2）mouseup：$(document).off();
-文档操作
-appendTo()	向目标结尾插入匹配元素集合中的每个元素。
-clone()	创建匹配元素集合的副本。
-detach()	从 DOM 中移除匹配元素集合。
-hasClass()	检查匹配的元素是否拥有指定的类。
-insertAfter()	把匹配的元素插入到另一个指定的元素集合的后面。
-insertBefore()	把匹配的元素插入到另一个指定的元素集合的前面。
-prependTo()	向目标开头插入匹配元素集合中的每个元素。
-removeAttr()	从所有匹配的元素中移除指定的属性。
-replaceAll()	用匹配的元素替换所有匹配到的元素。
-replaceWith()	用新内容替换匹配的元素。
-unwrap()	移除并替换指定元素的父元素。
-wrap()	把匹配的元素用指定的内容或元素包裹起来。
-wrapAll()	把所有匹配的元素用指定的内容或元素包裹起来。
-wrapinner()	将每一个匹配的元素的子内容用指定的内容或元素包裹起来。
-
-*css的left和top属性指的是距最近的一个position属性为relative或者absolute的父级元素的左边后上边的距离。position()：返回相对父元素的top和left像素值，与css('top')返回的是字符串
-
-offset()
-返回第一个匹配元素相对于文档的位置。
-offsetParent()
-返回最近的定位祖先元素。
-scrollLeft()
-设置或返回匹配元素相对滚动条左侧的偏移。
-scrollTop()
-设置或返回匹配元素相对滚动条顶部的偏移。
-
-BOM
-window
-        1. window.open(url,_blank)
-        window.onbeforeunload
-        2. history
-        history.back() - 与在浏览器点击后退按钮相同
-        history.forward() - 与在浏览器中点击向前按钮相同
-        3. location
-document
-title：页签标题
-cookie
-创建修改：document.cookie="username=John Doe";
-读取：var x = document.cookie;
-删除：document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-路径：document.cookie="username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/";
-querySelector():查找选择器
-localStorage/sessionStorage
-创建修改：localStorage.setItem('courseinfo', JSON.stringify(course));
-读取：JSON.parse(localStorage.getItem('courseinfo'));
-删除：localStorage.removeItem
-清除：localStorage.clear();
-浏览器兼容
-严格模式"use strict"
-IE兼容
-1.多余逗号会报错
-2.时间new Date不支持yyyy-MM-DD,支持yyyy/MM/DD
+Angular表单
+1.<form name=""></form>
+2.required/ng-required
+3.ng-maxlength/ng-minlength
+4.ng-pattern
+ng-model 指令也可以：
+绑定 HTML 元素到 HTML 表单。
+为应用程序数据提供状态（invalid、dirty、touched、error）。
+为 HTML 元素提供 CSS 类required
+ng-model 指令根据表单域的状态添加/移除以下类：ng-empty、ng-not-empty、ng-touched、ng-untouched、ng-valid、ng-invalid、ng-dirty、ng-pending、ng-pristine
 
 错误笔记
-1.return：退出当前函数空间
-2.||设置默认值
-3.get和post方法：get方法参数会有问题如&
-4.面对对象编程思想
-
-str.replace(regexp|substr, newSubStr|function)
-
-表单
-1.页面校验（focus、blur、tip、长度限制）
-2.提交校验
-
-跨域问题
-
-获取字节长度
-function getLength(str) {
-	str = str || "";
-	var realLength = 0, len = str.length, charCode = -1;
-	for (var i = 0; i < len; i++) {
-		charCode = str.charCodeAt(i);
-		if (charCode >= 0 && charCode <= 128)
-			realLength += 1;
-		else
-			realLength += 3;
-	}
-	return realLength;
-}
+1.webpack指令中controller需要注入，不轻易使用
