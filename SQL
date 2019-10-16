@@ -1,0 +1,48 @@
+CRUD
+INSERT
+INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)
+DELETE 
+DELETE FROM 表名称 WHERE 列名称 = 值
+UPDATE
+UPDATE 表名 SET 列名 = 新值 WHERE 列名 = 某值
+SELECT
+SELECT [DISTINCT] 列名 FORM 表名 WHERE 列名 = 某值 ORDER BY 列名 DESC
+连接
+内连接（等值连接、自然连接…）：返回符合连接条件的数据
+外连接（左外连接，右外连接，全外连接）：返回主表的数据和符合连接条件的数据，其余填null
+
+结构
+列
+添加列：alter table tableName add columnName varchar(10)
+删除列：alter table tableName drop column columnName
+修改列：ALTER TABLE table_name MODIFY COLUMN column_name datatype
+修改列名：alter table tableName rename  column  A  to  B
+表
+删除表：drop table
+清空表：truncate table
+修改表名：alter table  tableName   rename to  B 
+约束
+默认值：set DEFAULT、drop default
+check：
+外码：FOREIGN KEY (P_Id) REFERENCES Persons(P_Id)
+主码
+Oracle数据库
+数据类型
+字符型、数值型、日期型、大对象类型
+
+函数
+to_date()
+to_char()
+to_number()
+to_blob()--转换BLOB
+to_clob()--转换成Clob
+
+命令窗口
+1.查看表结构：DESCRIBE 表名
+Oracle/PLSQL Developer
+1.属性：Table、View
+2.操作提交和回滚
+3.记录表
+4.select * from nls_database_parameters
+错误笔记
+1.提交（增删改）、查询
