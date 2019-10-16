@@ -1,0 +1,24 @@
+简介
+Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求
+
+安装
+1.node.js
+2.webpack
+$ npm install webpack -g
+$ npm install webpack-dev-server -g
+
+配置
+entry：入口文件
+module：
+Output
+Mode
+Plugins
+Resolve
+Optimization
+devServer
+devtool
+
+插件
+ExtractTextWebpackPlugin：从一个或多个包中提取文本到单独的文件中
+
+webpack-dev-server：服务器
