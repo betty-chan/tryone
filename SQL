@@ -44,5 +44,27 @@ Oracle/PLSQL Developer
 2.操作提交和回滚
 3.记录表
 4.select * from nls_database_parameters
+Mybatis
+XML配置
+mappers：resource（路径、类名）
+数据类型
+1.简单数据类型/单个对象：#{id,jdbcType=INTEGER}
+2.多个对象类型
+3.集合类型
+<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+#{item}
+ </foreach>
+mappers：resource（路径、类名）
+
+映射语句
+1.select
+Id、resultType/resultMap：返回结果类型
+2.Insert, Update 和 Delete 的属性
+Id、parameterType:传入参数
+3.动态SQL
+<sql id=""></sql>
+<include refid=""/>
+<if test=""></if>
+<choose>
 错误笔记
 1.提交（增删改）、查询
