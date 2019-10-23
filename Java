@@ -1,0 +1,37 @@
+插件
+JAX-RS
+
+架构层
+	1. iservice：java文件
+	2. idao：java文件
+	3. service：java文件
+	4. Dao:xml文件
+
+日志
+Logger
+
+集合类
+List(有序，可重复)
+1.子集
+ArrayList
+Set（唯一）
+Map
+1.子集
+TreeMap：有序的key-value集合
+HashMap：无序的key-value集合
+2.操作
+put(key,value)
+clear()
+Queue
+
+正则
+java.util.regex 包含三个类，以支持正则表达式的完整版本。
+Pattern 保存正则表达式的编译形式。
+Matcher 将要匹配的字符串与模式相关联，并执行实际匹配。
+PatternSyntaxException 表示格式错误的正则表达式中的错误。
+
+怎么理解类、抽象类和接口
+多线程
+Scanner scan = new Scanner(System.in);
+String str1 = scan.next();
+System.out.println
