@@ -75,6 +75,7 @@ Jsx：js+html文件格式
 IT：网络、软件、硬件
 前端趋势：Angular\Vue\React主流框架、ES6、node.js、TypeStript
 后端趋势：Java、Mybatis、SQL
+打包、java（定时任务）、Mybatis、sql（增删改查、刷数据）、导入导出、备份、日志、消息队列
 入门、初级、中级、高级
 极简、复用思想
 详细设计：业务设计、[实现设计、算法设计…]
