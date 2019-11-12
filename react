@@ -1,7 +1,7 @@
-#App
+# App
 
-#组件
-##API
+# 组件
+## API
 render/JSX
 1.{}//嵌入代码
 2.{/*注释...*/}
@@ -22,7 +22,7 @@ replaceState
 forceUpdate
 findDOMNode
 isMounted：判断组件是否已挂载到DOM中
-##生命周期
+## 生命周期
 组件的生命周期可分成三个状态：
 Mounting：已插入真实 DOM
 Updating：正在被重新渲染
@@ -37,9 +37,9 @@ componentWillUpdate在组件接收到新的props或者state但还没有render时
 componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。
 componentWillUnmount在组件从 DOM 中移除的时候立刻被调用。
 
-#router
+# router
 
-#Redux
+# Redux
 createStore(
 reducer,//state 的计算方法
 applyMiddleware()//中间件
@@ -49,7 +49,7 @@ store.dispatch()
 store.subscribe():
 常用中间件
 
-#其他
+# 其他
 React Native (简称RN)是Facebook开源的跨平台移动应用开发框架
 通信方式
 1.父组件通过props向子组件传递
