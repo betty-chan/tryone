@@ -253,8 +253,7 @@ IE兼容
 	6. 提交参数如果为空默认为null
 	7. 修改要考虑判断参数的时效性
 	8. 方法调用后赋值或打印，等于return的值
-
-str.replace(regexp|substr, newSubStr|function)
+	9.${XX}的正则是\$\{[^\}]+\}，正则不正确用不了
 
 表单
 1.页面校验（focus、blur、tip、长度限制）
