@@ -1,0 +1,155 @@
+Vue cli
+1.服务
+vue-cli-service serve：启动一个开发服务器
+vue-cli-service build：会在 dist/ 目录产生一个可用于生产环境的包
+vue-cli-service help：查看vue-cli的所有命令
+2.配置
+vue.config.js：等同于webpack.config.js
+3.目录设计
+public：打包时的静态文件
+
+实例
+1.使用
+new Vue({ //  创建一个 Vue 的根实例
+  el: '#app', // 绑定id,这个实例下所有的内容都会在index.html 一个id为app的div下显示
+  data: '',
+  methods: function(){},
+  watch:{}
+  computed:{},
+  router, //  注入路由配置
+  store, // 注入
+  template: '<App/>',  // 配置根模板 即打开页面显示那个组件
+  components: {
+  App  //  注入组件
+  }
+});
+2.生命周期
+beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed
+
+Component
+1.组件
+export default {
+  name: 'App',//名称
+  props: '',
+  components: {}//子组件
+  data: function(){},
+  watch:,//监听
+  methods:{},//方法
+}
+vue
+<template></template>
+<script></script>
+<style></style>
+2.模板语法
+文本{{}}
+v-html
+v-if/else
+v-show
+v-for
+v-on: XXX，缩写@
+v-bind：XXX(HTML属性值)，缩写:
+3.组件间通讯方式
+父子：
+（1）父到子：prop属性、ref/$refs、$children
+（2）子到父：$parent、$emit(eventName)+@eventName
+非父子组件
+（1）使用$emit(eventName) 触发事件，使用 $on(eventName) 监听事件
+（2）全局变量
+（3）中央总线
+（4）Vuex
+
+directive
+Vue.directive('my-directive', {
+bind: function(){}//指令第一次绑定到元素时
+inserted: function(){},//当元素插入dom中
+Update:function(){},//被绑定元素所在的模板更新时调用
+componentUpdated:function(){},//被绑定元素所在模板完成一次更新周期时调用
+Unbind:function(){}//只调用一次， 指令与元素解绑时调用。
+})
+参数：el、binding、vnode 、oldVnode
+
+Vuex
+1.store组成：state、getter、mutations、action
+*Action提交的是 mutation，而不是直接变更状态、可以包含任意异步操作
+2.module
+3.使用
+（1）获取state：this.$store.state.count
+（2）操作mutations：this.$store.commit('increment',params)/this.$store.commit(params);
+（3）操作action:this.$store.dispatch
+
+Route
+1.配置
+path: '/viewOrder',
+[name]: 'viewOrder',
+[component]: ViewOrder
+[children]//子路由
+[redirect]//重定向
+[beforeEnter]
+[meta]//any
+[scrollBehavior]
+2.this.$router
+replace()
+push()
+beforeEach(to, from, next)
+beforeResolve()
+afterEach()
+Go()
+Back()
+Forard()
+Resolve
+addRoutes
+3.this.$route
+Name
+props:布尔模式，params会设置为组件属性；对象模式为组件属性；函数模式
+Path
+fullPash
+Params
+query
+4.使用
+<transition></transition>//过渡动效
+<router-view></router-view>
+<router-link to="" tag>
+3.其他
+（1）懒加载配置
+（2）动态路由
+*参考vue-router官方文档
+
+Mock
+1.安装
+2.mock
+Index.js
+data
+3.引入main.js
+
+过滤器
+Axios
+
+插件
+1.插件安装
+Vue.use();
+2.常用插件
+vue-element：vueUI组件库
+iview：vueUI组件库
+vux：VueUI移动端组件库
+vue-touch：VueUI移动端组件库
+Vue-i18n：国际化
+Vue-router：路由
+Vuex：状态管理
+Vant：移动端vue组件库
+Vue-vaild：表单校验
+babel-polyfill：兼容IE插件
+Mount.js：时间处理插件
+
+其他
+1.css作用域——scoped
+<style src="../css/index.css" scoped></style>
+2.事件修饰符
+3.表单修饰符
+3.动态组件:is
+4.<slot></slot>
+5.$set
+6.动态加载图片地址
+7.单文件分离css、html和js
+8.<%= BASE_URL %>
+9.主要文件index.html、webpack.config.js、main.js
+10.:disabled
