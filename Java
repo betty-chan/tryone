@@ -1,16 +1,37 @@
-插件
-JAX-RS
+数据类型
+基础：
+引用：String
 
-架构层
-	1. iservice：java文件
-	2. idao：java文件
-	3. service：java文件
-	4. Dao:xml文件
+对象与类
+1.构造函数
+2.主函数
+3.finalize()：对象被回收前调用
+4.继承：extends、implements
 
-日志
+常用类
+Date
 Logger
+logger.info()
+logger.error()
+Math
+Math.abs()
+Scanner
+1.说明：获取用户输入
+2.使用
+（1）创建对象：Scanner scan = new Scanner(System.in);
+（2）使用方法
+scan.hasNext()
+scan.next()
+scan.nextLine()
+scan.hasNextLine()
+String
+replaceFirst()
+replaceAll()
+System
+System.currentTimeMillis():获取当前时间
+System.out.println():
 
-集合类
+数据结构类
 List(有序，可重复)
 1.子集
 ArrayList
@@ -23,15 +44,47 @@ HashMap：无序的key-value集合
 put(key,value)
 clear()
 Queue
+Vector
+Stack
+Enumeration
+BitSet
+Dictionary
+说明：key-value
+Hashtable
+Properties
 
-正则
-java.util.regex 包含三个类，以支持正则表达式的完整版本。
-Pattern 保存正则表达式的编译形式。
-Matcher 将要匹配的字符串与模式相关联，并执行实际匹配。
-PatternSyntaxException 表示格式错误的正则表达式中的错误。
+使用
+1.ArrayList<String>
+2.list<Vo>
+3.HashMap<String, Object>
+*List和Map为接口
 
-怎么理解类、抽象类和接口
-多线程
-Scanner scan = new Scanner(System.in);
-String str1 = scan.next();
-System.out.println
+多线程编程
+线程池：
+	1) 容量
+	2) 任务队列
+	3) 锁
+	4) 线程：生命周期（创建、运行、挂起、就绪、停止）、通信
+*资源单位——进程
+*调度单位——线程
+
+项目结构
+	1. iservice：java文件
+	2. idao：java文件
+	3. service：java文件
+	4. domian
+	5. Dao:xml文件
+
+Java servlet
+JSP
+1.<% 代码片段 %>
+
+Java doc标签
+网络编程
+
+其他
+	1. Jdk（java虚拟机）>jre（java开发环境）>jvm(运行环境)
+	2. 抽象类和接口，接口比抽象类更抽象
+	3. 包
+	4. Java和JavaScript的区别在于，前者是纯的面向对象的编程风格，后者是函数式编程风格
+	5. 部署知识、Tomcat、Xml、maven、lookup
