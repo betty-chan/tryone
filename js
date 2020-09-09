@@ -97,6 +97,20 @@ Math.random()：0-1之间的随机数
 Math.round()：四舍五入
 Math.ceil()：向上取整
 Math.floor()：向下取整
+WebSocket
+1.创建：new WebSocket(url, [protocol] );//protocol可接受的子协议
+2.对象属性：
+readyState：连接状态
+bufferedAmount
+3.对象方法
+send()
+close()
+4.事件
+onopen
+onmessage
+onerror
+onclose
+
 ES6
 1.let和const
 2.结构赋值
